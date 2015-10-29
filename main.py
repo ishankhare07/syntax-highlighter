@@ -22,4 +22,4 @@ def highlight():
     return jsonify(return_dict)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
