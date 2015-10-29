@@ -7,15 +7,12 @@ import os
 class Highlighter:
     def __init__(self, filename, code):
         self.lexer = pygments.lexers.get_lexer_for_filename(filename)
-        self.highlighted_code = highlight(code, self.lexer, HtmlFormatter(linnenos=True))
+        self.highlighted_code = highlight(code, self.lexer, HtmlFormatter(linenos=True))
 
     def get_highlighted_code(self):
         soup = Bs(self.highlighted_code, 'html.parser')
-        return_html = ''
-        childs = soup.div.children
-        for child in childs:
-            return_html += str(child)
-        return return_html
+        soup.find('div', class_='highlight').unwrap()
+        return str(soup)
 
     def get_stylesheet_content(self):
         css_content = HtmlFormatter(linnenos=True).get_style_defs('.highlight')

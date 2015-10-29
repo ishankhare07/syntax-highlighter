@@ -32,6 +32,9 @@
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
+    left: 12px;
+    border-width: 0px;
+    outline: 0;
 }
 
 .code, #code {
@@ -51,4 +54,15 @@ pre {
     background-color: transparent;
     border-style: none;
     border-width: 0px;
+}
+
+.linenos {
+    background-color: rgba(0,0,0, 0.1);
+    border-style: none;
+    border-width: 0px;
+    font-weight: bold;
+}
+
+td {
+    vertical-align: top;
 }
