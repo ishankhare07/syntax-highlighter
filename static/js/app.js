@@ -1,13 +1,14 @@
-var app = angular.module("HighlightApp", []);
+var app = angular.module("HighlightApp", ['ngSanitize']);
 
-app.controller('EntryController', function() {
-    this.filename   = '';
-    this.code       = '';
+app.controller('EntryController', ['$http', function($http) {
+    this.filename           = '';
+    this.code               = '';
+    this.highlighted_code   = '';
 
     this.change = function() {
-        $httpProvider.defaults.headers.get = {Content-Type: application/json};
+        console.log("executing function");
         var req = $http({
-                method: 'GET',
+                method: 'POST',
                 url: '/api/v0.1/highlight',
                 data: {
                     filename: this.filename,
@@ -16,10 +17,16 @@ app.controller('EntryController', function() {
         }).then(function successCallback(response) {
             var data    = response.data;
             if(data.success == true) {
-                this.code = data.code;
+                console.log(data.highlighted_code);
+                //connect stylesheet
+                if(document.getElementById('highlight_css') === undefined){
+                    console.log('not yet defined');
+                }
+                var element = angular.element(document.querySelector('#background'));
+                element.html(data.highlighted_code);
             }
         }, function errorCallback(response) {
-
+            'pass';
         });
     };
-});
+}]);

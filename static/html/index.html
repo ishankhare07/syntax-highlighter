@@ -4,24 +4,24 @@
     <head>
         <title>Syntax Highlighter</title>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../static/css/index.css">
-        <script type="text/javascript" src="../static/js/app.js"></script>
+        <link rel="stylesheet" href="static/css/index.css">
+        <script type="text/javascript" src="static/js/app.js"></script>
     </head>
 
     <body>
-        <div class="container top-offset" ng-controller="EntryController as data">
+        <div class="container top-offset" ng-controller="EntryController as highlighter">
             <div class="row top-buffer">
-                    <input placeholder="Enter filename with extension" ng-model="data.filename" class="rounded-border col-md-6">
-                    <div class="col-md-6">{{ data.filename }}</div>
+                    <input placeholder="Enter filename with extension" ng-model="highlighter.filename" class="rounded-border col-md-6">
+                    <div class="col-md-6 text-center">{{ highlighter.filename }}</div>
             </div>
             <div class="row top-buffer panel panel-default" id="code">
-                <div class="code panel-default" id="background">
-                    {{ data.code }}
+                <div class="code" id="background">
                 </div>
-                <textarea class="code panel-default" id="front" ng-change="data.change()" ng-model="data.code"></textarea>
+                <textarea class="code panel-default" id="front" ng-change="highlighter.change()" ng-model="highlighter.code"></textarea>
             </div>
         </div>
     </body>

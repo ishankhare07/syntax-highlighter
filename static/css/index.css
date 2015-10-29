@@ -28,7 +28,7 @@
 #front {
     z-index: 2;
     position: relative;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(255,255,255,0);
     color: rgba(255,255,255,0);
     top: -80vh;
     width: 100%;
