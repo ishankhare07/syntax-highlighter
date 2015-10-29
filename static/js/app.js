@@ -19,8 +19,12 @@ app.controller('EntryController', ['$http', function($http) {
             if(data.success == true) {
                 console.log(data.highlighted_code);
                 //connect stylesheet
-                if(document.getElementById('highlight_css') === undefined){
-                    console.log('not yet defined');
+                if(document.getElementById('highlight_css') == null) {
+                    var style_element = document.createElement('link');
+                    style_element.setAttribute('rel', 'stylesheet');
+                    style_element.setAttribute('href', 'http://' + window.location.hostname + ':' + window.location.port + '/' + data.css_class);
+                    style_element.setAttribute('id', 'highlight_css');
+                    document.head.appendChild(style_element);
                 }
                 var element = angular.element(document.querySelector('#background'));
                 element.html(data.highlighted_code);

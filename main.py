@@ -16,7 +16,7 @@ def highlight():
     return_dict = {
         'highlighted_code': highlight.get_highlighted_code(),
         'css_class': highlight.get_stylesheet_content(),
-        'filename': data['filename'],
+        'id_name': highlight.get_css_id_name(),
         'success': True,
             }
     return jsonify(return_dict)

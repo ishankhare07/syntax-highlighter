@@ -21,8 +21,6 @@
     z-index: 1;
     position: relative;
     background-color: white;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 #front {
@@ -47,4 +45,10 @@
 
 input {
     font-family: monospace;
+}
+
+pre {
+    background-color: transparent;
+    border-style: none;
+    border-width: 0px;
 }
