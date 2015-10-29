@@ -1,0 +1,50 @@
+.top-offset {
+    margin-top: 10vh;
+}
+
+.containter-border {
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px 1px dimgrey;
+}
+
+.rounded-border {
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 3px;
+    padding: 3px;
+    box-shadow: 0px 0px 10px 0px lightblue;
+}
+
+#background {
+    z-index: 1;
+    position: relative;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#front {
+    z-index: 2;
+    position: relative;
+    background-color: rgba(0,0,0,0.1);
+    color: rgba(255,255,255,0);
+    top: -80vh;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.code, #code {
+    height: 80vh;
+    font-family: monospace;
+}
+
+.top-buffer {
+    margin-top:10px;
+}
+
+input {
+    font-family: monospace;
+}
