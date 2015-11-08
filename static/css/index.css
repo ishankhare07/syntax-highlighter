@@ -20,12 +20,31 @@
 #background {
     z-index: 1;
     position: relative;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 #front {
-    z-index: 2;
+    z-index: 3;
+}
+
+#front {
     position: relative;
+    background-color: rgba(255,255,255,0);
+    color: rgba(255,255,255,0);
+    top: -80vh;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    left: 27px;
+    border-width: 0px;
+    outline: 0;
+    font-size: 1em;
+    margin-top: 7px;
+}
+
+#caret {
+    z-index: 2;
+    position: absolute;
     background-color: rgba(255,255,255,0);
     color: rgba(255,255,255,0);
     top: -80vh;
@@ -68,4 +87,8 @@ pre {
 
 td {
     vertical-align: top;
+}
+
+body {
+    background-color: red;
 }
