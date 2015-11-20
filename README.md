@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ishankhare07/syntax-highlighter.svg?branch=master)](https://travis-ci.org/ishankhare07/syntax-highlighter)
+
 # syntax-highlighter
 flask pygments and angular based syntax highlighter
 
