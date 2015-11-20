@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html ng-app="HighlightApp">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <head>
-        <title>Syntax Highlighter</title>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.min.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="static/css/index.css">
-        <script type="text/javascript" src="static/js/app.js"></script>
-    </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <body>
-        <div class="container top-offset" ng-controller="EntryController as highlighter">
-            <div class="row top-buffer">
-                    <input placeholder="Enter filename with extension" ng-model="highlighter.filename" class="rounded-border col-md-6">
-                    <div class="col-md-6 text-center">{{ highlighter.filename }}</div>
-            </div>
-            <div class="row top-buffer panel panel-default" id="code">
-                <div class="code highlight" id="background">
-                </div>
-                <textarea spellcheck="false" class="code panel-default" id="front" ng-change="highlighter.change()" ng-model="highlighter.code"></textarea>
-                <div id="caret">
-                    
-                </div>
-            </div>
+<head>
+    <title>Syntax Highlighter</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/index.css">
+    <script type="text/javascript" src="static/js/app.js"></script>
+</head>
+
+<body>
+    <div class="container top-offset" ng-controller="EntryController as highlighter">
+        <div class="row">
+            <input placeholder="Enter filename with extension" ng-model="highlighter.filename" class="rounded-border col-md-6">
+            <div class="col-md-6 text-center">{{ highlighter.filename }}</div>
         </div>
-    </body>
+        <div class="row">
+            <div id="background" class="rounded-border expand overlay text-padding highlight">
+            </div>
+            <div id="caret" class="expand overlay text-padding">
+                {{ highlighter.caretText }}
+            </div>
+            <textarea spellcheck="false" id="text" class="expand overlay text-padding" ng-model="highlighter.code" ng-change="highlighter.change()">
+            </textarea>
+        </div>
+    </div>
+</body>
+
 </html>

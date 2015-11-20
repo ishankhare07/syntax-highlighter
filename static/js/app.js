@@ -3,6 +3,7 @@ var app = angular.module("HighlightApp", ['ngSanitize']);
 app.controller('EntryController', ['$http', function($http) {
     this.filename           = '';
     this.code               = '';
+    this.caretText          = '';
     this.highlighted_code   = '';
 
     this.change = function() {
@@ -24,6 +25,7 @@ app.controller('EntryController', ['$http', function($http) {
                     style_element.setAttribute('rel', 'stylesheet');
                     style_element.setAttribute('href', window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/' + data.css_class);
                     style_element.setAttribute('id', 'highlight_css_' + data.id_name);
+                    style_element.setAttribute('type', 'text/css');
                     document.head.appendChild(style_element);
                 }
                 var element = angular.element(document.querySelector('#background'));
