@@ -65,6 +65,8 @@ pre {
 }
 
 #text {
+    margin-left: 2.9vw;
+    margin-top: 1.5vh;
     z-index: 3;
     color: rgba(0,0,0,0);
     background-color: rgba(0,0,0,0);
